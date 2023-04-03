@@ -5,7 +5,7 @@ const props = defineProps(["character"]);
 <template>
   <div class="card">
     <div class="card__name">
-      Name: 
+      Name:
       {{ character.name.first }}
       {{ character.name.middle }}
       {{ character.name.last }}
@@ -36,43 +36,42 @@ const props = defineProps(["character"]);
 <style scoped>
 .card {
   display: grid;
-  grid-template-areas:
-    "name image image"
-    "gender image image"
-    "species image image"
-    "planet image image"
-    "occupation image image";
-    /* "sayings sayings"; */
-    border: black 1px solid;
-    padding: 20px;
-    max-width: 500px;
-    border-radius: 30px;
-    align-items: center;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(5, 1fr);
+  border: black 1px solid;
+  padding: 20px;
+  max-width: 400px;
+  border-radius: 30px;
+  align-items: center;
 }
 
 .card__name {
-  grid-area: name;
+  grid-row: 1/2;
+  grid-column: 1/2;
 }
 .card__gender {
-  grid-area: gender;
+  grid-row: 2/3;
+  grid-column: 1/2;
 }
 .card__species {
-  grid-area: species;
+  grid-row: 3/4;
+  grid-column: 1/2;
 }
 .card__planet {
-  grid-area: planet;
+  grid-row: 4/5;
+  grid-column: 1/2;
 }
 .card__occupation {
-  grid-area: occupation;
+  grid-row: 5/6;
+  grid-column: 1/2;
 }
 .card__image {
-  grid-area: image;
+  grid-row: 1/-1;
+
   margin: auto;
-  max-width: 150px;
-  height: auto;
+  /* max-width: 150px; */
+  /* height: auto; */
 }
 .card__sayings {
-  grid-area: sayings;
 }
-
 </style>
