@@ -36,13 +36,18 @@ const props = defineProps(["character"]);
 <style scoped>
 .card {
   display: grid;
+  /* grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(5, 1fr); */
+  /* grid-template: repeat(5,1fr)/1fr 2fr; */
+  /* grid-template: 1fr/1fr 2fr; */
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: repeat(5, 1fr);
+  grid-auto-flow: row dense;
   border: black 1px solid;
   padding: 20px;
   max-width: 400px;
   border-radius: 30px;
   align-items: center;
+  box-shadow: 5px 5px 5px black;
 }
 
 .card__name {
@@ -66,8 +71,9 @@ const props = defineProps(["character"]);
   grid-column: 1/2;
 }
 .card__image {
-  grid-row: 1/-1;
-
+  grid-row: 1/6;
+  max-width: 200px;
+  max-height: 300px;
   margin: auto;
   /* max-width: 150px; */
   /* height: auto; */
