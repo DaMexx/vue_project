@@ -1,7 +1,6 @@
 <script setup>
 import { onMounted } from "vue";
 
-import MyGrid from "./components/MyGrid/index.vue";
 import { useCharacterStore } from "@/stores/characters";
 const characterStore = useCharacterStore();
 
@@ -11,7 +10,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <MyGrid />
+  <RouterLink to="/">home</RouterLink>
+  <br>
+  <RouterLink to="grid">grid</RouterLink>
+  <br>
+  <RouterLink to="flex">flex</RouterLink>
+  <router-view />
 </template>
 
 <style scoped></style>

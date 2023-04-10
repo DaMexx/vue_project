@@ -1,7 +1,8 @@
 <script setup>
 // import MyGridItem from "./MyGridItem.vue";
 import MyGridItemCopy from "./MyGridItemCopy.vue";
-import Header from '../Header/index.vue'
+import Header from "../Header/index.vue";
+import Footer from "../Footer/index.vue";
 import { useCharacterStore } from "@/stores/characters";
 import { storeToRefs } from "pinia";
 const characterStore = useCharacterStore();
@@ -10,7 +11,9 @@ const { characters } = storeToRefs(characterStore);
 
 <template>
   <div class="page-wrapper">
-    <Header class="header" />
+    <header class="header">
+      <Header />
+    </header>
     <main class="main">
       <!-- <MyGridItem
         v-for="character in characters"
@@ -23,7 +26,9 @@ const { characters } = storeToRefs(characterStore);
         :character="character"
       />
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <Footer />
+    </footer>
   </div>
 </template>
 
@@ -42,9 +47,11 @@ const { characters } = storeToRefs(characterStore);
   grid-area: main;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr auto;
   padding: 25px;
   gap: 1%;
   margin: 0 auto;
+  /* height: 100%; */
 }
 .footer {
   grid-area: footer;

@@ -2,7 +2,11 @@
 </script>
 
 <template>
-    <div>
-        
-    </div>
+<nav>
+<li>asdasdasdas</li>
+<li>asdasdasdas</li>
+<li>asdasdasdas</li>
+<li>asdasdasdas</li>
+
+</nav>
 </template>
